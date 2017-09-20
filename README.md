@@ -1,6 +1,8 @@
 # react-router-dom and redux
 Repo showing how react-router-dom and redux can be used together.
 
+**The Taco Store**
+
 To demonstrate how react-router-dom and redux can work I created a small react application called "The Taco Shop". This is how the store front looks
 
 ![Index](https://github.com/unisport/react-router-dom-redux/blob/master/dist/images/index.png?raw=true)
