@@ -1,5 +1,5 @@
-# react-router-dom-redux
-Repo showing how react-router-dom and redux can be used in sweet harmony
+# react-router-dom redux
+Repo showing how react-router-dom and redux can be used together.
 
 To demonstrate how react-router-dom and redux can work I created a small react application called "The Taco Shop". This is how the store front looks
 
