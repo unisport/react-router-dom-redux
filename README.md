@@ -29,7 +29,7 @@ The main difference between react-router and react-router-dom is that each route
 
 ### React and Redux
 
-To have your redux store available to you have to connect the individual containers/components, you can no longer simply do that with your store using the provider.
+To have your redux store available to you, you have to connect the individual containers/components, you can no longer simply do that with your store using the provider.
 
 Here is how the index.js could look
 ```
@@ -47,7 +47,7 @@ render(
 ```
 
 ### Router and Switch
-Notice there is no history, only the Provider that takes your store, this is not required for react-router-dom to work, the Router component gives you access to the history object and using that you can create redirects programatically in your application.
+Notice there is no history, only the Provider that takes your store, this is not required for react-router-dom to work, the Router component gives you access to the history object and using that you can create redirects programatically in your application. You also get access to the match object with holds the current URL, using that you can build dynamic sub routes where you only specify the relative path like this "${ match.url }/eating-tacos".
 
 ```
 import React from 'react'
@@ -107,11 +107,12 @@ The Switch renders the first child <Route> or <Redirect> that matches the locati
 https://reacttraining.com/react-router/web/api/Switch
 
 ### Tacos Component
-This component is part of the routing, it's tied to a route which gives it full access to the history object - notice that it's not required that you pass the history to your store or top level route with react-router-com, routes have access to history by default. You can see this in the console by inspecting the Tacos component using the React extension
+
+This component is part of the routing, it's tied to a route which gives it full access to the history object - notice that it's not required that you pass the history to your store or top level route with react-router-dom, routes have access to history by default. You can see this in the console by inspecting the Tacos component using the React extension in Chrome.
 
 ![tacos console](https://github.com/unisport/react-router-dom-redux/blob/master/dist/images/tacos-console.png?raw=true)
 
-The Tacos component also has access to state and actions but where Main can access redux using the dispatch function, Tacos only has access to that tacos state and the function addTacoToOrder().
+The Tacos component also has access to state and actions but where Main can access redux using the dispatch() function, Tacos only has access to that tacos state and the function addTacoToOrder().
 
 ```
 import React from 'react'
@@ -153,7 +154,7 @@ export default connect(mapStateToProps,
 
 ### Taco Component
 
-The last component in this example is the Taco component. I has access to dispatch() but no state which is done by not passing anything to the connect function. If I wanted to access the history object from within the Taco component I could accomplish this by using the withRouter function imported from react-router-dom
+The next component in this example is the Taco component. I has access to dispatch() but no state which is done by not passing anything to the connect function. If I wanted to access the history object from within the Taco component I could accomplish this by using the withRouter function imported from react-router-dom
 
 ```
 import React from 'react'
